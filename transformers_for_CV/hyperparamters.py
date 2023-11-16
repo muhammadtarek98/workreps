@@ -1,0 +1,12 @@
+h=224
+w=224
+c=3
+p=16
+e=768
+num_patches=int((h*w)/p**2)
+num_heads=12
+mlp_size=3072
+mlp_dropout=0.1
+batch_size=32
+num_classes=10
+embedding_dropout=0.1
