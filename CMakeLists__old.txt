@@ -1,0 +1,75 @@
+cmake_minimum_required(VERSION 3.17 FATAL_ERROR)
+cmake_policy(SET CMP0111 NEW)
+project(example-app)
+
+set(CMAKE_CXX_STANDARD 17)
+add_compile_options("/permissive-")
+
+find_package(PythonInterp REQUIRED)
+find_package(Torch REQUIRED)
+find_package(OpenCV CONFIG REQUIRED highgui imgproc cudacodec cudaimgproc cudawarping ximgproc dnn)
+find_package(CUDAToolkit REQUIRED)
+
+add_executable(example-app)
+
+target_sources(example-app
+               PRIVATE
+               "yolov8.cpp")
+               
+
+target_include_directories(example-app
+                           PUBLIC
+                           $<BUILD_INTERFACE:${generated_headers}>
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/include>)
+
+target_link_libraries(example-app
+                      PUBLIC
+                      opencv_highgui
+                      opencv_imgproc
+                      opencv_cudacodec
+                      opencv_cudaimgproc
+                      opencv_cudawarping
+                      opencv_ximgproc
+                      opencv_dnn
+                      CUDA::cudart
+                      CUDA::nppist
+                      "${TORCH_LIBRARIES}")
+
+
+target_compile_definitions(example-app PUBLIC NOMINMAX _USE_MATH_DEFINES)
+
+
+target_compile_features(example-app PUBLIC cxx_std_17)
+
+set_target_properties(example-app
+                      PROPERTIES
+                      CUDA_ARCHITECTURES 35 50 75
+                      CUDA_RESOLVE_DEVICE_SYMBOLS ON
+                      CUDA_HOST_COMPILATION_CPP OFF
+                      CUDA_PROPAGATE_HOST_FLAGS OFF
+                      CUDA_SEPARABLE_COMPILATION ON
+                      CUDA_STANDARD 17
+                      POSITION_INDEPENDENT_CODE ON
+
+                      USE_CUDA ON
+                      LINK_FLAGS                      
+                      /INCLUDE:?warp_size@cuda@at@@YAHXZ 
+                      LINK_FLAGS
+                      /INCLUDE:?searchsorted_cuda@native@at@@YA?AVTensor@2@AEBV32@0_N1@Z
+
+                      #LINK_FLAGS
+                      #/INCLUDE:?_torch_cuda_cu_linker_symbol_op_cuda@native@at@@YA?AVTensor@2@AEBV32@@Z
+ 
+)
+
+# The following code block is suggested to be used on Windows.
+# According to https://github.com/pytorch/pytorch/issues/25457,
+# the DLLs need to be copied to avoid memory errors.
+if (MSVC)
+  file(GLOB TORCH_DLLS "${TORCH_INSTALL_PREFIX}/lib/*.dll")
+  add_custom_command(TARGET example-app
+                     POST_BUILD
+                     COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                     ${TORCH_DLLS}
+                     $<TARGET_FILE_DIR:example-app>)
+endif (MSVC) 
