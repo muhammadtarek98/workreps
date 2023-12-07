@@ -12,12 +12,12 @@
         "default"
       ],
       "hidden": true,
-      "binaryDir": "${sourceDir}/../build/win/${presetName}",
+      "binaryDir": "${sourceDir}/build/win/${presetName}",
       "cacheVariables": {
-        "CMAKE_INSTALL_PREFIX": "${sourceDir}/../install/win/${presetName}",
-        "CMAKE_RUNTIME_OUTPUT_DIRECTORY": "${sourceDir}/../build/win/${presetName}/bin",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/win/${presetName}",
+        "CMAKE_RUNTIME_OUTPUT_DIRECTORY": "${sourceDir}/build/win/${presetName}/bin",
         "CMAKE_TOOLCHAIN_FILE": "\\\\192.168.10.72\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake",
-        "VCPKG_INSTALLED_DIR": "C:\\data\\prc-realtime\\realtime_vcpkg\\installed"
+        "VCPKG_INSTALLED_DIR": "\\\\192.168.10.72\\vcpkg\\research_instance\\installed"
       },
       "condition": {
         "type": "equals",
