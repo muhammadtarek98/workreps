@@ -6,17 +6,18 @@ import torch
 import torchvision
 from PIL import Image
 from torch.utils.data import Dataset
-from shapely.geometry import Polygon
+# from shapely.geometry import Polygon
 from torchvision.io import read_image
-from torchvision.ops.boxes import masks_to_boxes
+# from torchvision.ops.boxes import masks_to_boxes
 from torchvision import tv_tensors
 from torchvision.transforms.v2 import functional as F
+from torchvision.transforms import v2 as T
+
+
 class CustomDataset(torch.utils.data.Dataset):
     def __init__(self, root, transforms):
         self.root = root
         self.transforms = transforms
-        # load all image files, sorting them to
-        # ensure that they are aligned
         self.imgs = list(sorted(os.listdir(os.path.join(root, "masks"))))
         self.masks = list(sorted(os.listdir(os.path.join(root, "masks"))))
 
@@ -37,9 +38,18 @@ class CustomDataset(torch.utils.data.Dataset):
         masks = (mask == obj_ids[:, None, None]).to(dtype=torch.uint8)
 
         # get bounding box coordinates for each mask
-        boxes = masks_to_boxes(masks)
-        boxes = torch.as_tensor(boxes, dtype=torch.int32)
-        print(boxes)
+        boxes = []
+        for i in range(num_objs):
+            pos = np.where(masks[i])
+            xmin = np.min(pos[1])
+            xmax = np.max(pos[1])
+            ymin = np.min(pos[0])
+            ymax = np.max(pos[0])
+            if xmin == xmax or ymin == ymax:
+                continue
+            boxes.append([xmin, ymin, xmax, ymax])
+        boxes = torch.as_tensor(boxes, dtype=torch.float32)
+
         # there is only one class
         labels = torch.ones((num_objs,), dtype=torch.int64)
 
@@ -52,7 +62,7 @@ class CustomDataset(torch.utils.data.Dataset):
         img = tv_tensors.Image(img)
 
         target = {}
-        target["boxes"] = torchvision.ops.boxes.masks_to_boxes(masks=masks)
+        target["boxes"] = tv_tensors.BoundingBoxes(boxes, format="XYXY", canvas_size=F.get_size(img))
         target["masks"] = tv_tensors.Mask(masks)
         target["labels"] = labels
         target["image_id"] = image_id
@@ -60,7 +70,7 @@ class CustomDataset(torch.utils.data.Dataset):
         target["iscrowd"] = iscrowd
 
         if self.transforms is not None:
-            img= self.transforms(img)
+            img, target = self.transforms(img, target)
 
         return img, target
 
@@ -71,7 +81,7 @@ class CustomDataset(torch.utils.data.Dataset):
 def get_transform(train):
     transforms = []
     if train:
-        transforms.append(torchvision.transforms.RandomHorizontalFlip(0.5))
-    transforms.append(torchvision.transforms.v2.ToDtype(torch.float, scale=True))
-    #transforms.append(torchvision.transforms.ToTensor())
-    return torchvision.transforms.Compose(transforms)
+        transforms.append(T.RandomHorizontalFlip(0.5))
+    transforms.append(T.ToDtype(torch.float, scale=True))
+    transforms.append(T.ToPureTensor())
+    return T.Compose(transforms)

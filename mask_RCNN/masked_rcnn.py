@@ -1,21 +1,22 @@
-from torchvision.models.detection import maskrcnn_resnet50_fpn_v2, MaskRCNN
-from torchvision.models.detection import MaskRCNN_ResNet50_FPN_V2_Weights
+from torchvision.models.detection import maskrcnn_resnet50_fpn
+#from torchvision.models.detection impo
 from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
 from torchvision.models.detection.mask_rcnn import MaskRCNNPredictor
 from torchinfo import summary
+import torchvision
 
+def get_model_instance_segmentation(num_classes:int):
+    model = torchvision.models.detection.maskrcnn_resnet50_fpn(weights="DEFAULT",pretrained=True)
+    in_features = model.roi_heads.box_predictor.cls_score.in_features
+    model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
+    in_features_mask = model.roi_heads.mask_predictor.conv5_mask.in_channels
+    hidden_layer = 256
+    model.roi_heads.mask_predictor = MaskRCNNPredictor(
+        in_features_mask,
+        hidden_layer,
+        num_classes
+    )
 
-def get_model(num_classes: int,training_flag=None) -> MaskRCNN:
-    model = maskrcnn_resnet50_fpn_v2(weights=MaskRCNN_ResNet50_FPN_V2_Weights.DEFAULT)
-    in_features_boxes = model.roi_heads.box_predictor.cls_score.in_features
-    in_features_masks = model.roi_heads.mask_predictor.conv5_mask.in_channels
-    out_features_masks = model.roi_heads.mask_predictor.conv5_mask.out_channels
-    model.roi_heads.box_predictor = FastRCNNPredictor(in_channels=in_features_boxes, num_classes=2)
-    model.roi_heads.mask_predictor = MaskRCNNPredictor(in_channels=in_features_masks, dim_reduced=out_features_masks,
-                                                       num_classes=num_classes)
-
-    for param in model.parameters():
-            param.requires_grad = True
     return model
 
 """
