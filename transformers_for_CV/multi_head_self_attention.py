@@ -3,6 +3,7 @@ import torch.nn as nn
 import class_with_image_patch_embedding
 import hyperparamters
 
+
 class MSA_Block(nn.Module):
     def __init__(self, embedding_dim: int, num_heads: int):
         super(MSA_Block, self).__init__()
@@ -12,7 +13,7 @@ class MSA_Block(nn.Module):
 
     def forward(self, x):
         x = self.ln(x)
-        attention_map,attention_output_weights  = self.msa(
+        attention_map, attention_output_weights = self.msa(
             query=x,
             value=x,
             key=x,
@@ -22,8 +23,8 @@ class MSA_Block(nn.Module):
         return attention_map
 
 
-msa_block = MSA_Block(embedding_dim=hyperparamters.e, num_heads=hyperparamters.num_heads)
+msa_block = MSA_Block(embedding_dim=hyperparamters.embedding_size, num_heads=hyperparamters.num_heads)
 test = msa_block(class_with_image_patch_embedding.patch_and_positional_embeddings)
 
-#print(class_with_image_patch_embedding.patch_and_positional_embeddings.shape)
-#print(test.shape)
+# print(class_with_image_patch_embedding.patch_and_positional_embeddings.shape)
+# print(test.shape)

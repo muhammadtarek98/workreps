@@ -3,7 +3,7 @@ import torch.nn as nn
 
 
 class Patch_Embedding(nn.Module):
-    def __init__(self, in_channels, patch_size, embedding_dim):
+    def __init__(self, in_channels:int, patch_size:int, embedding_dim:int):
         super(Patch_Embedding, self).__init__()
 
         self.in_channels = in_channels
@@ -14,10 +14,14 @@ class Patch_Embedding(nn.Module):
                                 stride=self.patch_size,
                                 padding=0,
                                 kernel_size=self.patch_size)
+        self.activation=nn.ReLU(inplace=True)
+        self.pool=nn.MaxPool2d(kernel_size=2,stride=2)
         self.flatten = nn.Flatten(start_dim=2, end_dim=3)
 
     def forward(self, x: torch.tensor):
         x = self.conv2d(x)
+        #x=self.activation(x)
+        #x=self.pool(x)
         x = self.flatten(x)
         x = x.permute(0, 2, 1)
         return x
