@@ -1,0 +1,650 @@
+WARNING  imgsz=[720] must be multiple of max stride 32, updating to [736]
+image 1/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\199.png: 576x736 8 stones, 46.0ms
+image 2/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\200.png: 576x736 8 stones, 62.0ms
+image 4/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\202.png: 576x736 8 stones, 34.3ms
+image 5/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\203.png: 576x736 8 stones, 41.0ms
+image 6/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\204.png: 576x736 9 stones, 36.0ms
+image 7/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\205.png: 576x736 8 stones, 42.0ms
+image 8/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\206.png: 576x736 8 stones, 40.0ms
+image 9/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\207.png: 576x736 8 stones, 39.0ms
+image 10/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\208.png: 576x736 8 stones, 73.6ms
+image 11/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\209.png: 576x736 8 stones, 44.0ms
+image 12/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\210.png: 576x736 9 stones, 41.0ms
+image 13/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\211.png: 576x736 7 stones, 105.0ms
+image 14/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\212.png: 576x736 8 stones, 78.0ms
+image 15/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\213.png: 576x736 8 stones, 81.0ms
+image 16/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\214.png: 576x736 8 stones, 82.0ms
+image 17/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\215.png: 576x736 8 stones, 51.9ms
+image 18/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\216.png: 576x736 8 stones, 39.0ms
+image 19/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\217.png: 576x736 6 stones, 36.0ms
+image 20/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\218.png: 576x736 6 stones, 38.0ms
+image 21/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\219.png: 576x736 7 stones, 36.0ms
+image 22/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\220.png: 576x736 7 stones, 37.0ms
+image 23/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\221.png: 576x736 8 stones, 83.8ms
+image 24/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\30.png: 416x736 43 stones, 52.0ms
+image 25/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\31.png: 416x736 44 stones, 63.7ms
+image 26/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\32.png: 416x736 42 stones, 64.4ms
+image 27/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\33.png: 416x736 45 stones, 70.6ms
+image 28/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\34.png: 416x736 40 stones, 53.7ms
+image 29/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\35.png: 416x736 42 stones, 48.7ms
+image 30/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\46.png: 416x736 45 stones, 58.6ms
+image 31/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\47.png: 416x736 46 stones, 69.0ms
+image 32/32 D:\projects\graval detection project\resyris\resyris\test_data_realworld\dataset\images\test\Explorer_HD1080_SN23755918_12-44-53.png: 224x736 27 stones, 81.1ms
+Speed: 7.7ms preprocess, 55.3ms inference, 15.5ms postprocess per image at shape (1, 3, 224, 736)
+Results saved to runs\segment\predict2
+masked_area: 1882.797042760998
+masked_area: 1143.289210529998
+masked_area: 827.2210064544342
+masked_area: 1285.4436413599178
+masked_area: 3337.6175809400156
+masked_area: 2641.9665746563114
+masked_area: 756.1433266421081
+masked_area: 806.0482972683385
+===================img 0======================
+
+masked_area: 3845.7453788658604
+masked_area: 1949.3371097454801
+masked_area: 2445.368206982501
+masked_area: 2121.739395803772
+masked_area: 772.7780846522655
+masked_area: 1300.5672837025486
+masked_area: 1106.9945971774869
+masked_area: 1134.2147809825838
+===================img 1======================
+
+masked_area: 2900.567588877864
+masked_area: 2171.644386335276
+masked_area: 2285.065341653768
+masked_area: 989.0359295159578
+masked_area: 1890.3588705658913
+masked_area: 1128.1659397063777
+masked_area: 1218.9038662835956
+masked_area: 641.2096767029725
+===================img 2======================
+
+masked_area: 601.890065530315
+masked_area: 2527.0310273193754
+masked_area: 585.2549559045583
+masked_area: 2127.7865652516484
+masked_area: 1863.1388061759062
+masked_area: 373.5348432860337
+masked_area: 825.7083914452232
+masked_area: 512.665536805056
+===================img 3======================
+
+masked_area: 2091.492602054961
+masked_area: 594.3292129603215
+masked_area: 1823.8183524524793
+masked_area: 420.4160500653088
+masked_area: 2533.082190587884
+masked_area: 662.3817025600001
+masked_area: 840.8324716491625
+masked_area: 270.69930712971836
+===================img 4======================
+
+masked_area: 1619.6581835113466
+masked_area: 365.9734400729649
+masked_area: 583.7427721223794
+masked_area: 1658.9786106967367
+masked_area: 2083.931591920904
+masked_area: 719.8489720248617
+masked_area: 719.8490118309855
+masked_area: 889.227222232148
+masked_area: 382.6082975966856
+===================img 5======================
+
+masked_area: 2114.1783906472847
+masked_area: 656.3328745504841
+masked_area: 405.29266645852476
+masked_area: 1805.6707405998604
+masked_area: 745.557705134619
+masked_area: 957.277754727751
+masked_area: 1527.40886262618
+masked_area: 488.46901733148843
+===================img 6======================
+
+masked_area: 3257.467773668468
+masked_area: 763.7052274243906
+masked_area: 2511.9099457997363
+masked_area: 576.1817536954768
+masked_area: 1129.6787230594782
+masked_area: 964.8392640890088
+masked_area: 1188.657735957764
+masked_area: 657.8442953932099
+===================img 7======================
+
+masked_area: 2613.2323561105877
+masked_area: 2755.388273011893
+masked_area: 920.9831811799668
+masked_area: 515.6899972492829
+masked_area: 1105.4813983538188
+masked_area: 311.53129447836545
+masked_area: 756.1438374798745
+masked_area: 1147.8267769180238
+===================img 8======================
+
+masked_area: 561.0583899917547
+masked_area: 2410.587057823781
+masked_area: 1578.82912187092
+masked_area: 553.4969469727948
+masked_area: 396.2198755738791
+masked_area: 1465.4065610598773
+masked_area: 801.5120577318594
+masked_area: 715.3114056363702
+===================img 9======================
+
+masked_area: 3373.912141219713
+masked_area: 2047.6370896911249
+masked_area: 796.9761499071028
+masked_area: 1911.5311286225915
+masked_area: 359.9242737162858
+masked_area: 753.1196026001126
+masked_area: 854.4433928346261
+masked_area: 452.1743376357481
+===================img 10======================
+
+masked_area: 2818.9033886161633
+masked_area: 316.0678922655061
+masked_area: 846.8805964277126
+masked_area: 883.1757869612193
+masked_area: 1305.1044520353898
+masked_area: 1655.9542696687859
+masked_area: 621.5495891608298
+masked_area: 626.0870494013652
+masked_area: 477.8825698590372
+===================img 11======================
+
+masked_area: 2197.3532156408764
+masked_area: 3455.5778010189533
+masked_area: 1410.9645481500775
+masked_area: 1365.5955715936143
+masked_area: 355.38750343816355
+masked_area: 863.5162699646316
+masked_area: 570.1319172792137
+===================img 12======================
+
+masked_area: 3494.8969809636474
+masked_area: 2191.3038170859218
+masked_area: 1370.1324480196927
+masked_area: 1365.5957308150828
+masked_area: 343.28921052999794
+masked_area: 851.4179770569317
+masked_area: 561.0580715481192
+masked_area: 627.5987754203379
+===================img 13======================
+
+masked_area: 1640.8317153439857
+masked_area: 613.9890616692137
+masked_area: 795.4630837684963
+masked_area: 1572.7799090724438
+masked_area: 840.8312774826773
+masked_area: 226.84313134127297
+masked_area: 474.8582288310863
+masked_area: 166.35156065411866
+===================img 14======================
+
+masked_area: 2105.104584720917
+masked_area: 1887.3354450650513
+masked_area: 320.60530606657267
+masked_area: 701.7012871956686
+masked_area: 1150.8503881790675
+masked_area: 314.55578809417784
+masked_area: 370.50997815211304
+masked_area: 470.3216177755967
+===================img 15======================
+
+masked_area: 3065.404756544158
+masked_area: 869.5653633452021
+masked_area: 1926.6543065668084
+masked_area: 1463.894277763553
+masked_area: 1005.6714703680482
+masked_area: 359.92440640134737
+masked_area: 586.7675244743004
+masked_area: 617.0127260033041
+===================img 16======================
+
+masked_area: 6852.173408841714
+masked_area: 2622.3053659275174
+masked_area: 765.2173647671007
+masked_area: 2877.8829281087965
+masked_area: 1134.2156301687937
+masked_area: 381.0965715777129
+masked_area: 981.4741547843441
+masked_area: 804.5365712502971
+===================img 17======================
+
+masked_area: 961.8145648110658
+masked_area: 396.2195770321414
+masked_area: 1194.707559106173
+masked_area: 290.3592420842033
+masked_area: 683.5535293896683
+masked_area: 551.98499538959
+===================img 18======================
+
+masked_area: 553.4971592691727
+masked_area: 1149.3388479196
+masked_area: 226.8430782671785
+masked_area: 731.9466413129121
+masked_area: 976.9370262557641
+masked_area: 512.6652316288091
+===================img 19======================
+
+masked_area: 657.844972087536
+masked_area: 709.262975681806
+masked_area: 1253.6857054047287
+masked_area: 1141.7762903454714
+masked_area: 796.9746771021746
+masked_area: 205.67153671057895
+masked_area: 130.056801347062
+===================img 20======================
+
+masked_area: 1483.55356256105
+masked_area: 1569.7531664436683
+masked_area: 889.2255238639191
+masked_area: 308.50639617303386
+masked_area: 957.2777149220929
+masked_area: 710.7749670711346
+masked_area: 434.02594294119626
+===================img 21======================
+
+masked_area: 2578.4495881916955
+masked_area: 414.36666477797553
+masked_area: 695.6521075705532
+masked_area: 1433.6492089186795
+masked_area: 1949.3379721976817
+masked_area: 890.7378204292618
+masked_area: 499.0543767856434
+masked_area: 597.3533217888325
+===================img 22======================
+
+masked_area: 9603.577352818102
+masked_area: 7838.282213630155
+masked_area: 11058.945027597249
+masked_area: 7074.667877096683
+masked_area: 10811.889133632183
+masked_area: 6733.289009001106
+masked_area: 9428.392701759934
+masked_area: 7703.526091426611
+masked_area: 5116.21801225096
+masked_area: 12222.330935880542
+masked_area: 10690.601077388972
+masked_area: 6037.050584025681
+masked_area: 4590.671147992834
+masked_area: 2313.3031560480595
+masked_area: 11229.632609378546
+masked_area: 4909.5978732556105
+masked_area: 6131.380326919258
+masked_area: 2632.223661363125
+masked_area: 9531.706933133304
+masked_area: 7389.097167200409
+masked_area: 6791.674166399986
+masked_area: 8547.998994920403
+masked_area: 6320.03700000653
+masked_area: 11045.46437310474
+masked_area: 4424.473866718821
+masked_area: 8327.8956059739
+masked_area: 6809.642777491361
+masked_area: 6450.298362547532
+masked_area: 13102.731514387764
+masked_area: 9145.40988740651
+masked_area: 5174.612956913188
+masked_area: 4981.466189129278
+masked_area: 2241.4320046100765
+masked_area: 4523.293041154742
+masked_area: 6252.658184278756
+masked_area: 9603.576392382383
+masked_area: 13062.303934535943
+masked_area: 1280.1772153936327
+masked_area: 16471.620197277516
+masked_area: 5713.63223195076
+masked_area: 10551.35840494372
+masked_area: 6760.237123472616
+masked_area: 4348.113741084933
+===================img 23======================
+
+masked_area: 10348.394575644284
+masked_area: 9496.501336948946
+masked_area: 11222.729801205918
+masked_area: 7985.487424695864
+masked_area: 7021.489392225631
+masked_area: 11294.463446322829
+masked_area: 2681.2577348798513
+masked_area: 7160.487723071128
+masked_area: 4775.145713429898
+masked_area: 9774.492698207498
+masked_area: 11177.892983082682
+masked_area: 5532.899509321898
+masked_area: 6595.5379979154095
+masked_area: 6967.685639990494
+masked_area: 6375.833444707096
+masked_area: 4725.830842917785
+masked_area: 6882.49435130693
+masked_area: 4766.182663260028
+masked_area: 5940.909290378913
+masked_area: 12253.977531960234
+masked_area: 5914.01342294924
+masked_area: 9577.207445083186
+masked_area: 11133.048751196126
+masked_area: 9613.07479311619
+masked_area: 2672.290846467018
+masked_area: 7272.577655063244
+masked_area: 10953.70457442524
+masked_area: 6416.192438918166
+masked_area: 7976.516972191632
+masked_area: 13271.78034476447
+masked_area: 8617.693862074055
+masked_area: 1206.1193269323558
+masked_area: 5698.795992270112
+masked_area: 5057.62403728161
+masked_area: 1927.9961563274264
+masked_area: 5497.03053917177
+masked_area: 4071.208418227732
+masked_area: 8164.839997634292
+masked_area: 4107.078485020436
+masked_area: 3999.4681018693373
+masked_area: 4797.570245407522
+masked_area: 14859.020690655336
+masked_area: 11092.70525848493
+masked_area: 14253.712359679863
+===================img 24======================
+
+masked_area: 10840.5
+masked_area: 8572.5
+masked_area: 9810.0
+masked_area: 10197.0
+masked_area: 8055.0
+masked_area: 9094.5
+masked_area: 7780.5
+masked_area: 5476.5
+masked_area: 11659.5
+masked_area: 8158.5
+masked_area: 9144.0
+masked_area: 5269.5
+masked_area: 14409.0
+masked_area: 5431.5
+masked_area: 8257.5
+masked_area: 2587.5
+masked_area: 4702.5
+masked_area: 10480.5
+masked_area: 12690.0
+masked_area: 5004.0
+masked_area: 7672.5
+masked_area: 6943.5
+masked_area: 4819.5
+masked_area: 7065.0
+masked_area: 2466.0
+masked_area: 6628.5
+masked_area: 5953.5
+masked_area: 10534.5
+masked_area: 1206.0
+masked_area: 5755.5
+masked_area: 5553.0
+masked_area: 5872.5
+masked_area: 10728.0
+masked_area: 5157.0
+masked_area: 8649.0
+masked_area: 5031.0
+masked_area: 5562.0
+masked_area: 6673.5
+masked_area: 8433.0
+masked_area: 13558.5
+masked_area: 8910.0
+masked_area: 1714.5
+===================img 25======================
+
+masked_area: 9077.274293083698
+masked_area: 9864.055585056543
+masked_area: 10659.834495898336
+masked_area: 9571.818831473589
+masked_area: 7840.890984414145
+masked_area: 9081.765690099448
+masked_area: 10560.926027473062
+masked_area: 6743.883832378313
+masked_area: 10336.130784336478
+masked_area: 8434.349390387535
+masked_area: 11433.138576947153
+masked_area: 4621.812135977671
+masked_area: 11356.70411470905
+masked_area: 6582.031747817993
+masked_area: 8124.136707952246
+masked_area: 10704.796784023754
+masked_area: 10039.402542218566
+masked_area: 6856.284336552024
+masked_area: 2567.17426308617
+masked_area: 5093.881020979956
+masked_area: 12831.363720912486
+masked_area: 4473.447054054588
+masked_area: 5242.251502074301
+masked_area: 6231.351194150746
+masked_area: 6474.131974812597
+masked_area: 2274.9365486260504
+masked_area: 8276.997144760564
+masked_area: 7652.060136009008
+masked_area: 5408.594617601484
+masked_area: 6662.960626948625
+masked_area: 2643.60286860168
+masked_area: 7723.998625664972
+masked_area: 5368.133472442627
+masked_area: 5525.491551911458
+masked_area: 935.1516815572977
+masked_area: 6325.766755620949
+masked_area: 13262.97745474521
+masked_area: 5084.890448486432
+masked_area: 3682.163200682029
+masked_area: 3448.375188782811
+masked_area: 14126.191287226044
+masked_area: 5669.3591055665165
+masked_area: 5408.596905384213
+masked_area: 6285.3016754779965
+masked_area: 15007.395827614702
+===================img 26======================
+
+masked_area: 8260.463261805475
+masked_area: 4622.994966447353
+masked_area: 6302.859062358737
+masked_area: 5527.874098125845
+masked_area: 4851.450350921601
+masked_area: 5317.3361364379525
+masked_area: 2943.122101377696
+masked_area: 5572.674460329115
+masked_area: 4054.0764867439866
+masked_area: 7669.146656278521
+masked_area: 13506.124409047887
+masked_area: 5783.220369070768
+masked_area: 4179.509499061853
+masked_area: 2799.7770556546748
+masked_area: 5550.276699878275
+masked_area: 5433.810574371368
+masked_area: 5017.196719571948
+masked_area: 6110.235509060323
+masked_area: 5738.423843372613
+masked_area: 6679.146133054048
+masked_area: 10347.973457928747
+masked_area: 3628.5085334926844
+masked_area: 4470.6802935525775
+masked_area: 7463.078618869185
+masked_area: 3771.859973397106
+masked_area: 698.8231518603861
+masked_area: 4407.968080624938
+masked_area: 4519.962820325047
+masked_area: 6150.548728369176
+masked_area: 1608.1898374855518
+masked_area: 3597.1498236879706
+masked_area: 1066.1544798910618
+masked_area: 15418.930347237736
+masked_area: 4148.146130643785
+masked_area: 3265.6616536676884
+masked_area: 3615.0720877833664
+masked_area: 1451.4036874361336
+masked_area: 3565.799243617803
+masked_area: 3650.9170727059245
+masked_area: 13667.392358284444
+===================img 27======================
+
+masked_area: 5151.780432332307
+masked_area: 6111.295431841165
+masked_area: 5030.724514376372
+masked_area: 6290.645263172686
+masked_area: 3501.7799324430525
+masked_area: 5380.452445125207
+masked_area: 5905.0487735159695
+masked_area: 5008.305008670315
+masked_area: 5739.146990129724
+masked_area: 3331.3979947790504
+masked_area: 6236.841556634754
+masked_area: 8070.67743396759
+masked_area: 7631.275364337489
+masked_area: 5501.514760166407
+masked_area: 4358.166119571775
+masked_area: 4842.409805141389
+masked_area: 6339.966987695545
+masked_area: 7451.928228914738
+masked_area: 5609.121305069886
+masked_area: 2842.670499458909
+masked_area: 1856.2566624507308
+masked_area: 3618.357706632465
+masked_area: 5039.6916769482195
+masked_area: 2936.8258435670286
+masked_area: 4434.3881437871605
+masked_area: 4066.7246084734797
+masked_area: 11859.412006295286
+masked_area: 3533.1651385352015
+masked_area: 10003.159867495298
+masked_area: 16352.091321850196
+masked_area: 3143.082919994369
+masked_area: 1654.4897471629083
+masked_area: 2891.9917670488358
+masked_area: 5555.315268166363
+masked_area: 789.1337929349393
+masked_area: 10491.875025585294
+masked_area: 1380.9840690959245
+masked_area: 3699.062169801444
+masked_area: 3972.566157212481
+masked_area: 4232.621456973255
+masked_area: 4138.464285124093
+masked_area: 1488.5922132674605
+===================img 28======================
+
+masked_area: 2254.9106353335083
+masked_area: 5125.200168253854
+masked_area: 1334.0800301544368
+masked_area: 2856.815887298435
+masked_area: 2942.16260522604
+masked_area: 3481.183709654957
+masked_area: 2389.664013441652
+masked_area: 1069.0595040395856
+masked_area: 673.7772266343236
+masked_area: 3782.1395828165114
+masked_area: 8013.46553837508
+masked_area: 2964.621425351128
+masked_area: 898.3702758010477
+masked_area: 925.3217746503651
+masked_area: 1271.1950593907386
+masked_area: 408.7580954320729
+masked_area: 1742.8388344775885
+masked_area: 961.2566186115146
+masked_area: 1504.7731001228094
+masked_area: 1069.0607846155763
+masked_area: 1307.1327617829666
+masked_area: 1069.060327266343
+masked_area: 2492.977055709809
+masked_area: 1104.995468504727
+masked_area: 1374.5062722619623
+masked_area: 835.4844818077981
+masked_area: 1248.7370167560875
+masked_area: 754.6303054019809
+masked_area: 2124.649524334818
+masked_area: 907.3539867904037
+masked_area: 857.9445367772132
+masked_area: 1509.2627146095037
+masked_area: 1356.5388731481507
+masked_area: 781.5813583368436
+masked_area: 345.87239290960133
+masked_area: 889.384918352589
+masked_area: 799.5484716063365
+masked_area: 170.69217813946307
+masked_area: 476.1350360279903
+masked_area: 422.2333189062774
+masked_area: 1262.2074609342963
+masked_area: 422.23395919427276
+masked_area: 516.5624100747518
+masked_area: 871.4171304944903
+masked_area: 512.0712063019164
+===================img 29======================
+
+masked_area: 4810.773027686402
+masked_area: 2430.090712898411
+masked_area: 1284.6694825030863
+masked_area: 3099.3776390254498
+masked_area: 2308.810706000775
+masked_area: 2704.0941725131124
+masked_area: 1055.5846464438364
+masked_area: 7555.2958205174655
+masked_area: 1069.0599156524986
+masked_area: 1145.4212761302479
+masked_area: 507.5776357492432
+masked_area: 1015.1599821913987
+masked_area: 3243.115551352501
+masked_area: 925.3217746503651
+masked_area: 2690.621258649975
+masked_area: 1450.8669924512506
+masked_area: 3768.6660744007677
+masked_area: 1069.0597784481943
+masked_area: 992.7017108816653
+masked_area: 925.3206312777475
+masked_area: 485.1198560902849
+masked_area: 628.8579399250448
+masked_area: 2924.196463821456
+masked_area: 1370.0146225737408
+masked_area: 727.6796755157411
+masked_area: 651.3190925307572
+masked_area: 956.7638941532932
+masked_area: 1774.2805881006643
+masked_area: 476.1348530892283
+masked_area: 1590.1151073537767
+masked_area: 440.20096956100315
+masked_area: 422.2335933148861
+masked_area: 871.4186854800209
+masked_area: 637.8426799494773
+masked_area: 628.8602609708905
+masked_area: 1464.3429248156026
+masked_area: 1437.3924778681248
+masked_area: 929.8135844115168
+masked_area: 646.8257277831435
+masked_area: 822.0088009852916
+masked_area: 179.6733051072806
+masked_area: 170.68960555130616
+masked_area: 660.3017973527312
+masked_area: 296.46200533024967
+masked_area: 242.55943067744374
+masked_area: 619.8751436304301
+===================img 30======================
+
+masked_area: 3266.545055946335
+masked_area: 5076.7525800950825
+masked_area: 4396.221673456952
+masked_area: 3239.322682833299
+masked_area: 2041.5869879052043
+masked_area: 2844.614712404087
+masked_area: 2803.779361486435
+masked_area: 3048.770210829098
+masked_area: 4001.5070157013834
+masked_area: 2191.304745880887
+masked_area: 5593.944212655537
+masked_area: 4654.817459888756
+masked_area: 4409.82569501549
+masked_area: 1905.4769534021616
+masked_area: 6043.1032384857535
+masked_area: 1687.7116616144776
+masked_area: 3334.59832175076
+masked_area: 4518.711087487638
+masked_area: 1306.618181599304
+masked_area: 4273.7282788679
+masked_area: 2817.392578125
+masked_area: 9159.920744292438
+masked_area: 1442.7232802137733
+masked_area: 2844.6044425815344
+masked_area: 9146.314851872623
+masked_area: 3783.7416443005204
+masked_area: 2803.7736294940114
+===================img 31======================

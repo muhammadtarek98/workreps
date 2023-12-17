@@ -1,0 +1,617 @@
+===================img 1======================
+
+masked_area: 18.827970427609984 mm^2
+masked_area: 11.432892105299981 mm^2
+masked_area: 8.272210064544344 mm^2
+masked_area: 12.854436413599181 mm^2
+masked_area: 33.37617580940016 mm^2
+masked_area: 26.41966574656312 mm^2
+masked_area: 7.561433266421083 mm^2
+masked_area: 8.060482972683387 mm^2
+===================img 2======================
+
+masked_area: 38.45745378865861 mm^2
+masked_area: 19.493371097454805 mm^2
+masked_area: 24.453682069825014 mm^2
+masked_area: 21.21739395803772 mm^2
+masked_area: 7.7277808465226565 mm^2
+masked_area: 13.005672837025488 mm^2
+masked_area: 11.069945971774871 mm^2
+masked_area: 11.342147809825839 mm^2
+===================img 3======================
+
+masked_area: 29.005675888778647 mm^2
+masked_area: 21.716443863352765 mm^2
+masked_area: 22.850653416537686 mm^2
+masked_area: 9.89035929515958 mm^2
+masked_area: 18.903588705658915 mm^2
+masked_area: 11.281659397063779 mm^2
+masked_area: 12.189038662835959 mm^2
+masked_area: 6.412096767029726 mm^2
+===================img 4======================
+
+masked_area: 6.018900655303152 mm^2
+masked_area: 25.270310273193758 mm^2
+masked_area: 5.852549559045584 mm^2
+masked_area: 21.27786565251649 mm^2
+masked_area: 18.631388061759065 mm^2
+masked_area: 3.735348432860338 mm^2
+masked_area: 8.257083914452235 mm^2
+masked_area: 5.126655368050561 mm^2
+===================img 5======================
+
+masked_area: 20.914926020549615 mm^2
+masked_area: 5.943292129603216 mm^2
+masked_area: 18.238183524524796 mm^2
+masked_area: 4.204160500653089 mm^2
+masked_area: 25.330821905878842 mm^2
+masked_area: 6.623817025600003 mm^2
+masked_area: 8.408324716491625 mm^2
+masked_area: 2.7069930712971844 mm^2
+===================img 6======================
+
+masked_area: 16.19658183511347 mm^2
+masked_area: 3.6597344007296493 mm^2
+masked_area: 5.837427721223795 mm^2
+masked_area: 16.58978610696737 mm^2
+masked_area: 20.839315919209042 mm^2
+masked_area: 7.198489720248618 mm^2
+masked_area: 7.198490118309857 mm^2
+masked_area: 8.892272222321482 mm^2
+masked_area: 3.8260829759668566 mm^2
+===================img 7======================
+
+masked_area: 21.141783906472853 mm^2
+masked_area: 6.563328745504842 mm^2
+masked_area: 4.052926664585248 mm^2
+masked_area: 18.05670740599861 mm^2
+masked_area: 7.455577051346192 mm^2
+masked_area: 9.572777547277513 mm^2
+masked_area: 15.274088626261804 mm^2
+masked_area: 4.884690173314885 mm^2
+===================img 8======================
+
+masked_area: 32.574677736684684 mm^2
+masked_area: 7.637052274243907 mm^2
+masked_area: 25.11909945799737 mm^2
+masked_area: 5.761817536954769 mm^2
+masked_area: 11.296787230594784 mm^2
+masked_area: 9.64839264089009 mm^2
+masked_area: 11.886577359577643 mm^2
+masked_area: 6.5784429539321 mm^2
+===================img 9======================
+
+masked_area: 26.13232356110588 mm^2
+masked_area: 27.553882730118936 mm^2
+masked_area: 9.209831811799669 mm^2
+masked_area: 5.15689997249283 mm^2
+masked_area: 11.05481398353819 mm^2
+masked_area: 3.115312944783655 mm^2
+masked_area: 7.561438374798747 mm^2
+masked_area: 11.47826776918024 mm^2
+===================img 10======================
+
+masked_area: 5.610583899917548 mm^2
+masked_area: 24.105870578237813 mm^2
+masked_area: 15.788291218709203 mm^2
+masked_area: 5.534969469727949 mm^2
+masked_area: 3.962198755738792 mm^2
+masked_area: 14.654065610598776 mm^2
+masked_area: 8.015120577318596 mm^2
+masked_area: 7.1531140563637035 mm^2
+===================img 11======================
+
+masked_area: 33.739121412197136 mm^2
+masked_area: 20.476370896911252 mm^2
+masked_area: 7.96976149907103 mm^2
+masked_area: 19.115311286225918 mm^2
+masked_area: 3.599242737162859 mm^2
+masked_area: 7.531196026001127 mm^2
+masked_area: 8.544433928346264 mm^2
+masked_area: 4.521743376357482 mm^2
+===================img 12======================
+
+masked_area: 28.18903388616164 mm^2
+masked_area: 3.1606789226550616 mm^2
+masked_area: 8.468805964277127 mm^2
+masked_area: 8.831757869612195 mm^2
+masked_area: 13.051044520353901 mm^2
+masked_area: 16.559542696687863 mm^2
+masked_area: 6.215495891608299 mm^2
+masked_area: 6.260870494013654 mm^2
+masked_area: 4.7788256985903725 mm^2
+===================img 13======================
+
+masked_area: 21.97353215640877 mm^2
+masked_area: 34.55577801018954 mm^2
+masked_area: 14.109645481500777 mm^2
+masked_area: 13.655955715936146 mm^2
+masked_area: 3.5538750343816363 mm^2
+masked_area: 8.635162699646319 mm^2
+masked_area: 5.701319172792138 mm^2
+===================img 14======================
+
+masked_area: 34.94896980963648 mm^2
+masked_area: 21.91303817085922 mm^2
+masked_area: 13.701324480196929 mm^2
+masked_area: 13.65595730815083 mm^2
+masked_area: 3.43289210529998 mm^2
+masked_area: 8.514179770569319 mm^2
+masked_area: 5.610580715481193 mm^2
+masked_area: 6.27598775420338 mm^2
+===================img 15======================
+
+masked_area: 16.40831715343986 mm^2
+masked_area: 6.1398906166921385 mm^2
+masked_area: 7.954630837684965 mm^2
+masked_area: 15.727799090724442 mm^2
+masked_area: 8.408312774826774 mm^2
+masked_area: 2.26843131341273 mm^2
+masked_area: 4.748582288310864 mm^2
+masked_area: 1.663515606541187 mm^2
+===================img 16======================
+
+masked_area: 21.051045847209174 mm^2
+masked_area: 18.873354450650517 mm^2
+masked_area: 3.2060530606657274 mm^2
+masked_area: 7.017012871956687 mm^2
+masked_area: 11.508503881790677 mm^2
+masked_area: 3.1455578809417792 mm^2
+masked_area: 3.705099781521131 mm^2
+masked_area: 4.703216177755968 mm^2
+===================img 17======================
+
+masked_area: 30.654047565441584 mm^2
+masked_area: 8.695653633452022 mm^2
+masked_area: 19.26654306566809 mm^2
+masked_area: 14.638942777635533 mm^2
+masked_area: 10.056714703680484 mm^2
+masked_area: 3.599244064013474 mm^2
+masked_area: 5.867675244743006 mm^2
+masked_area: 6.170127260033042 mm^2
+===================img 18======================
+
+masked_area: 68.52173408841716 mm^2
+masked_area: 26.22305365927518 mm^2
+masked_area: 7.652173647671008 mm^2
+masked_area: 28.77882928108797 mm^2
+masked_area: 11.34215630168794 mm^2
+masked_area: 3.8109657157771295 mm^2
+masked_area: 9.814741547843443 mm^2
+masked_area: 8.045365712502972 mm^2
+===================img 19======================
+
+masked_area: 9.61814564811066 mm^2
+masked_area: 3.9621957703214146 mm^2
+masked_area: 11.947075591061733 mm^2
+masked_area: 2.9035924208420334 mm^2
+masked_area: 6.835535293896684 mm^2
+masked_area: 5.519849953895902 mm^2
+===================img 20======================
+
+masked_area: 5.534971592691728 mm^2
+masked_area: 11.493388479196003 mm^2
+masked_area: 2.2684307826717856 mm^2
+masked_area: 7.319466413129122 mm^2
+masked_area: 9.769370262557642 mm^2
+masked_area: 5.126652316288093 mm^2
+===================img 21======================
+
+masked_area: 6.578449720875361 mm^2
+masked_area: 7.092629756818061 mm^2
+masked_area: 12.536857054047289 mm^2
+masked_area: 11.417762903454715 mm^2
+masked_area: 7.9697467710217476 mm^2
+masked_area: 2.05671536710579 mm^2
+masked_area: 1.3005680134706201 mm^2
+===================img 22======================
+
+masked_area: 14.835535625610504 mm^2
+masked_area: 15.697531664436687 mm^2
+masked_area: 8.892255238639192 mm^2
+masked_area: 3.0850639617303393 mm^2
+masked_area: 9.572777149220931 mm^2
+masked_area: 7.107749670711347 mm^2
+masked_area: 4.340259429411963 mm^2
+===================img 23======================
+
+masked_area: 25.78449588191696 mm^2
+masked_area: 4.143666647779756 mm^2
+masked_area: 6.956521075705533 mm^2
+masked_area: 14.336492089186798 mm^2
+masked_area: 19.49337972197682 mm^2
+masked_area: 8.90737820429262 mm^2
+masked_area: 4.990543767856435 mm^2
+masked_area: 5.973533217888327 mm^2
+===================img 24======================
+
+masked_area: 96.03577352818104 mm^2
+masked_area: 78.38282213630156 mm^2
+masked_area: 110.58945027597251 mm^2
+masked_area: 70.74667877096684 mm^2
+masked_area: 108.11889133632185 mm^2
+masked_area: 67.33289009001108 mm^2
+masked_area: 94.28392701759937 mm^2
+masked_area: 77.03526091426612 mm^2
+masked_area: 51.16218012250961 mm^2
+masked_area: 122.22330935880544 mm^2
+masked_area: 106.90601077388975 mm^2
+masked_area: 60.37050584025682 mm^2
+masked_area: 45.906711479928354 mm^2
+masked_area: 23.1330315604806 mm^2
+masked_area: 112.29632609378548 mm^2
+masked_area: 49.09597873255611 mm^2
+masked_area: 61.31380326919259 mm^2
+masked_area: 26.322236613631254 mm^2
+masked_area: 95.31706933133306 mm^2
+masked_area: 73.8909716720041 mm^2
+masked_area: 67.91674166399987 mm^2
+masked_area: 85.47998994920404 mm^2
+masked_area: 63.20037000006532 mm^2
+masked_area: 110.45464373104743 mm^2
+masked_area: 44.24473866718822 mm^2
+masked_area: 83.27895605973902 mm^2
+masked_area: 68.09642777491362 mm^2
+masked_area: 64.50298362547532 mm^2
+masked_area: 131.02731514387767 mm^2
+masked_area: 91.45409887406511 mm^2
+masked_area: 51.74612956913189 mm^2
+masked_area: 49.81466189129279 mm^2
+masked_area: 22.41432004610077 mm^2
+masked_area: 45.23293041154743 mm^2
+masked_area: 62.52658184278758 mm^2
+masked_area: 96.03576392382385 mm^2
+masked_area: 130.62303934535944 mm^2
+masked_area: 12.801772153936328 mm^2
+masked_area: 164.7162019727752 mm^2
+masked_area: 57.13632231950761 mm^2
+masked_area: 105.51358404943721 mm^2
+masked_area: 67.60237123472618 mm^2
+masked_area: 43.48113741084934 mm^2
+===================img 25======================
+
+masked_area: 103.48394575644286 mm^2
+masked_area: 94.96501336948948 mm^2
+masked_area: 112.22729801205921 mm^2
+masked_area: 79.85487424695866 mm^2
+masked_area: 70.21489392225632 mm^2
+masked_area: 112.94463446322831 mm^2
+masked_area: 26.81257734879852 mm^2
+masked_area: 71.6048772307113 mm^2
+masked_area: 47.75145713429899 mm^2
+masked_area: 97.744926982075 mm^2
+masked_area: 111.77892983082684 mm^2
+masked_area: 55.32899509321899 mm^2
+masked_area: 65.9553799791541 mm^2
+masked_area: 69.67685639990495 mm^2
+masked_area: 63.75833444707097 mm^2
+masked_area: 47.25830842917786 mm^2
+masked_area: 68.82494351306931 mm^2
+masked_area: 47.66182663260029 mm^2
+masked_area: 59.409092903789144 mm^2
+masked_area: 122.53977531960237 mm^2
+masked_area: 59.14013422949241 mm^2
+masked_area: 95.77207445083188 mm^2
+masked_area: 111.33048751196128 mm^2
+masked_area: 96.13074793116192 mm^2
+masked_area: 26.722908464670187 mm^2
+masked_area: 72.72577655063245 mm^2
+masked_area: 109.53704574425241 mm^2
+masked_area: 64.16192438918168 mm^2
+masked_area: 79.76516972191634 mm^2
+masked_area: 132.7178034476447 mm^2
+masked_area: 86.17693862074056 mm^2
+masked_area: 12.06119326932356 mm^2
+masked_area: 56.98795992270113 mm^2
+masked_area: 50.57624037281611 mm^2
+masked_area: 19.279961563274266 mm^2
+masked_area: 54.970305391717716 mm^2
+masked_area: 40.71208418227733 mm^2
+masked_area: 81.64839997634293 mm^2
+masked_area: 41.07078485020437 mm^2
+masked_area: 39.99468101869338 mm^2
+masked_area: 47.975702454075225 mm^2
+masked_area: 148.5902069065534 mm^2
+masked_area: 110.92705258484932 mm^2
+masked_area: 142.53712359679866 mm^2
+===================img 26======================
+
+masked_area: 108.40500000000002 mm^2
+masked_area: 85.72500000000002 mm^2
+masked_area: 98.10000000000002 mm^2
+masked_area: 101.97000000000001 mm^2
+masked_area: 80.55000000000001 mm^2
+masked_area: 90.94500000000002 mm^2
+masked_area: 77.80500000000002 mm^2
+masked_area: 54.76500000000001 mm^2
+masked_area: 116.59500000000003 mm^2
+masked_area: 81.58500000000002 mm^2
+masked_area: 91.44000000000001 mm^2
+masked_area: 52.69500000000001 mm^2
+masked_area: 144.09000000000003 mm^2
+masked_area: 54.31500000000001 mm^2
+masked_area: 82.57500000000002 mm^2
+masked_area: 25.875000000000004 mm^2
+masked_area: 47.025000000000006 mm^2
+masked_area: 104.80500000000002 mm^2
+masked_area: 126.90000000000002 mm^2
+masked_area: 50.040000000000006 mm^2
+masked_area: 76.72500000000001 mm^2
+masked_area: 69.43500000000002 mm^2
+masked_area: 48.19500000000001 mm^2
+masked_area: 70.65000000000002 mm^2
+masked_area: 24.660000000000004 mm^2
+masked_area: 66.28500000000001 mm^2
+masked_area: 59.53500000000001 mm^2
+masked_area: 105.34500000000003 mm^2
+masked_area: 12.060000000000002 mm^2
+masked_area: 57.555000000000014 mm^2
+masked_area: 55.53000000000001 mm^2
+masked_area: 58.72500000000001 mm^2
+masked_area: 107.28000000000002 mm^2
+masked_area: 51.57000000000001 mm^2
+masked_area: 86.49000000000002 mm^2
+masked_area: 50.31000000000001 mm^2
+masked_area: 55.62000000000001 mm^2
+masked_area: 66.73500000000001 mm^2
+masked_area: 84.33000000000001 mm^2
+masked_area: 135.58500000000004 mm^2
+masked_area: 89.10000000000002 mm^2
+masked_area: 17.145000000000003 mm^2
+===================img 27======================
+
+masked_area: 90.772742930837 mm^2
+masked_area: 98.64055585056545 mm^2
+masked_area: 106.59834495898338 mm^2
+masked_area: 95.71818831473591 mm^2
+masked_area: 78.40890984414146 mm^2
+masked_area: 90.81765690099449 mm^2
+masked_area: 105.60926027473064 mm^2
+masked_area: 67.43883832378314 mm^2
+masked_area: 103.3613078433648 mm^2
+masked_area: 84.34349390387537 mm^2
+masked_area: 114.33138576947155 mm^2
+masked_area: 46.21812135977672 mm^2
+masked_area: 113.56704114709052 mm^2
+masked_area: 65.82031747817994 mm^2
+masked_area: 81.24136707952248 mm^2
+masked_area: 107.04796784023756 mm^2
+masked_area: 100.39402542218568 mm^2
+masked_area: 68.56284336552025 mm^2
+masked_area: 25.671742630861704 mm^2
+masked_area: 50.93881020979957 mm^2
+masked_area: 128.3136372091249 mm^2
+masked_area: 44.73447054054589 mm^2
+masked_area: 52.42251502074302 mm^2
+masked_area: 62.31351194150747 mm^2
+masked_area: 64.74131974812599 mm^2
+masked_area: 22.74936548626051 mm^2
+masked_area: 82.76997144760566 mm^2
+masked_area: 76.5206013600901 mm^2
+masked_area: 54.08594617601485 mm^2
+masked_area: 66.62960626948626 mm^2
+masked_area: 26.436028686016805 mm^2
+masked_area: 77.23998625664973 mm^2
+masked_area: 53.68133472442628 mm^2
+masked_area: 55.2549155191146 mm^2
+masked_area: 9.351516815572978 mm^2
+masked_area: 63.257667556209505 mm^2
+masked_area: 132.62977454745214 mm^2
+masked_area: 50.848904484864335 mm^2
+masked_area: 36.8216320068203 mm^2
+masked_area: 34.48375188782812 mm^2
+masked_area: 141.26191287226047 mm^2
+masked_area: 56.69359105566517 mm^2
+masked_area: 54.085969053842135 mm^2
+masked_area: 62.85301675477998 mm^2
+masked_area: 150.07395827614704 mm^2
+===================img 28======================
+
+masked_area: 82.60463261805477 mm^2
+masked_area: 46.229949664473544 mm^2
+masked_area: 63.028590623587384 mm^2
+masked_area: 55.278740981258466 mm^2
+masked_area: 48.51450350921602 mm^2
+masked_area: 53.17336136437954 mm^2
+masked_area: 29.431221013776963 mm^2
+masked_area: 55.726744603291166 mm^2
+masked_area: 40.540764867439876 mm^2
+masked_area: 76.69146656278522 mm^2
+masked_area: 135.06124409047888 mm^2
+masked_area: 57.83220369070769 mm^2
+masked_area: 41.79509499061854 mm^2
+masked_area: 27.997770556546755 mm^2
+masked_area: 55.50276699878277 mm^2
+masked_area: 54.33810574371369 mm^2
+masked_area: 50.17196719571949 mm^2
+masked_area: 61.10235509060325 mm^2
+masked_area: 57.384238433726146 mm^2
+masked_area: 66.79146133054049 mm^2
+masked_area: 103.4797345792875 mm^2
+masked_area: 36.28508533492685 mm^2
+masked_area: 44.706802935525786 mm^2
+masked_area: 74.63078618869187 mm^2
+masked_area: 37.71859973397107 mm^2
+masked_area: 6.988231518603863 mm^2
+masked_area: 44.079680806249385 mm^2
+masked_area: 45.19962820325048 mm^2
+masked_area: 61.50548728369178 mm^2
+masked_area: 16.08189837485552 mm^2
+masked_area: 35.97149823687971 mm^2
+masked_area: 10.66154479891062 mm^2
+masked_area: 154.1893034723774 mm^2
+masked_area: 41.48146130643786 mm^2
+masked_area: 32.65661653667689 mm^2
+masked_area: 36.15072087783367 mm^2
+masked_area: 14.51403687436134 mm^2
+masked_area: 35.657992436178034 mm^2
+masked_area: 36.50917072705925 mm^2
+masked_area: 136.67392358284445 mm^2
+===================img 29======================
+
+masked_area: 51.517804323323084 mm^2
+masked_area: 61.11295431841166 mm^2
+masked_area: 50.30724514376373 mm^2
+masked_area: 62.90645263172687 mm^2
+masked_area: 35.017799324430534 mm^2
+masked_area: 53.804524451252085 mm^2
+masked_area: 59.050487735159706 mm^2
+masked_area: 50.08305008670316 mm^2
+masked_area: 57.39146990129725 mm^2
+masked_area: 33.31397994779051 mm^2
+masked_area: 62.36841556634755 mm^2
+masked_area: 80.70677433967592 mm^2
+masked_area: 76.3127536433749 mm^2
+masked_area: 55.015147601664076 mm^2
+masked_area: 43.58166119571776 mm^2
+masked_area: 48.4240980514139 mm^2
+masked_area: 63.399669876955464 mm^2
+masked_area: 74.5192822891474 mm^2
+masked_area: 56.09121305069887 mm^2
+masked_area: 28.426704994589095 mm^2
+masked_area: 18.562566624507312 mm^2
+masked_area: 36.18357706632466 mm^2
+masked_area: 50.3969167694822 mm^2
+masked_area: 29.368258435670292 mm^2
+masked_area: 44.343881437871616 mm^2
+masked_area: 40.667246084734806 mm^2
+masked_area: 118.59412006295288 mm^2
+masked_area: 35.331651385352025 mm^2
+masked_area: 100.031598674953 mm^2
+masked_area: 163.520913218502 mm^2
+masked_area: 31.430829199943698 mm^2
+masked_area: 16.544897471629085 mm^2
+masked_area: 28.919917670488363 mm^2
+masked_area: 55.55315268166364 mm^2
+masked_area: 7.891337929349394 mm^2
+masked_area: 104.91875025585296 mm^2
+masked_area: 13.809840690959248 mm^2
+masked_area: 36.99062169801444 mm^2
+masked_area: 39.725661572124814 mm^2
+masked_area: 42.32621456973256 mm^2
+masked_area: 41.38464285124094 mm^2
+masked_area: 14.885922132674608 mm^2
+===================img 30======================
+
+masked_area: 22.549106353335088 mm^2
+masked_area: 51.25200168253855 mm^2
+masked_area: 13.340800301544371 mm^2
+masked_area: 28.568158872984355 mm^2
+masked_area: 29.421626052260404 mm^2
+masked_area: 34.811837096549574 mm^2
+masked_area: 23.896640134416526 mm^2
+masked_area: 10.690595040395857 mm^2
+masked_area: 6.737772266343237 mm^2
+masked_area: 37.82139582816512 mm^2
+masked_area: 80.13465538375081 mm^2
+masked_area: 29.646214253511285 mm^2
+masked_area: 8.983702758010478 mm^2
+masked_area: 9.253217746503653 mm^2
+masked_area: 12.711950593907389 mm^2
+masked_area: 4.08758095432073 mm^2
+masked_area: 17.42838834477589 mm^2
+masked_area: 9.612566186115147 mm^2
+masked_area: 15.047731001228097 mm^2
+masked_area: 10.690607846155764 mm^2
+masked_area: 13.071327617829668 mm^2
+masked_area: 10.69060327266343 mm^2
+masked_area: 24.929770557098095 mm^2
+masked_area: 11.049954685047272 mm^2
+masked_area: 13.745062722619625 mm^2
+masked_area: 8.354844818077984 mm^2
+masked_area: 12.487370167560877 mm^2
+masked_area: 7.54630305401981 mm^2
+masked_area: 21.246495243348186 mm^2
+masked_area: 9.073539867904039 mm^2
+masked_area: 8.579445367772134 mm^2
+masked_area: 15.09262714609504 mm^2
+masked_area: 13.56538873148151 mm^2
+masked_area: 7.8158135833684375 mm^2
+masked_area: 3.458723929096014 mm^2
+masked_area: 8.893849183525893 mm^2
+masked_area: 7.995484716063367 mm^2
+masked_area: 1.706921781394631 mm^2
+masked_area: 4.761350360279904 mm^2
+masked_area: 4.222333189062775 mm^2
+masked_area: 12.622074609342965 mm^2
+masked_area: 4.2223395919427285 mm^2
+masked_area: 5.165624100747519 mm^2
+masked_area: 8.714171304944905 mm^2
+masked_area: 5.120712063019165 mm^2
+===================img 31======================
+
+masked_area: 48.10773027686403 mm^2
+masked_area: 24.300907128984115 mm^2
+masked_area: 12.846694825030866 mm^2
+masked_area: 30.993776390254503 mm^2
+masked_area: 23.088107060007754 mm^2
+masked_area: 27.04094172513113 mm^2
+masked_area: 10.555846464438366 mm^2
+masked_area: 75.55295820517468 mm^2
+masked_area: 10.690599156524987 mm^2
+masked_area: 11.45421276130248 mm^2
+masked_area: 5.075776357492433 mm^2
+masked_area: 10.15159982191399 mm^2
+masked_area: 32.43115551352501 mm^2
+masked_area: 9.253217746503653 mm^2
+masked_area: 26.906212586499755 mm^2
+masked_area: 14.508669924512509 mm^2
+masked_area: 37.68666074400768 mm^2
+masked_area: 10.690597784481945 mm^2
+masked_area: 9.927017108816655 mm^2
+masked_area: 9.253206312777476 mm^2
+masked_area: 4.85119856090285 mm^2
+masked_area: 6.288579399250449 mm^2
+masked_area: 29.241964638214565 mm^2
+masked_area: 13.700146225737411 mm^2
+masked_area: 7.276796755157412 mm^2
+masked_area: 6.5131909253075735 mm^2
+masked_area: 9.567638941532934 mm^2
+masked_area: 17.742805881006646 mm^2
+masked_area: 4.761348530892284 mm^2
+masked_area: 15.90115107353777 mm^2
+masked_area: 4.402009695610032 mm^2
+masked_area: 4.2223359331488615 mm^2
+masked_area: 8.71418685480021 mm^2
+masked_area: 6.3784267994947745 mm^2
+masked_area: 6.2886026097089065 mm^2
+masked_area: 14.643429248156028 mm^2
+masked_area: 14.373924778681252 mm^2
+masked_area: 9.29813584411517 mm^2
+masked_area: 6.4682572778314364 mm^2
+masked_area: 8.220088009852917 mm^2
+masked_area: 1.7967330510728066 mm^2
+masked_area: 1.706896055513062 mm^2
+masked_area: 6.603017973527313 mm^2
+masked_area: 2.964620053302497 mm^2
+masked_area: 2.425594306774438 mm^2
+masked_area: 6.198751436304303 mm^2
+===================img 32======================
+
+masked_area: 32.66545055946336 mm^2
+masked_area: 50.767525800950835 mm^2
+masked_area: 43.96221673456953 mm^2
+masked_area: 32.393226828333 mm^2
+masked_area: 20.415869879052046 mm^2
+masked_area: 28.446147124040877 mm^2
+masked_area: 28.037793614864356 mm^2
+masked_area: 30.487702108290982 mm^2
+masked_area: 40.01507015701384 mm^2
+masked_area: 21.913047458808872 mm^2
+masked_area: 55.93944212655538 mm^2
+masked_area: 46.54817459888757 mm^2
+masked_area: 44.09825695015491 mm^2
+masked_area: 19.05476953402162 mm^2
+masked_area: 60.431032384857545 mm^2
+masked_area: 16.87711661614478 mm^2
+masked_area: 33.34598321750761 mm^2
+masked_area: 45.18711087487639 mm^2
+masked_area: 13.066181815993044 mm^2
+masked_area: 42.73728278867901 mm^2
+masked_area: 28.173925781250006 mm^2
+masked_area: 91.5992074429244 mm^2
+masked_area: 14.427232802137736 mm^2
+masked_area: 28.446044425815348 mm^2
+masked_area: 91.46314851872624 mm^2
+masked_area: 37.83741644300521 mm^2
+masked_area: 28.03773629494012 mm^2
