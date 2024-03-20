@@ -9,15 +9,11 @@ from matplotlib import pyplot as plt
 from sklearn.cluster import KMeans as SKLearnKMeans
 from torch_kmeans import KMeans as TorchKMeans
 import torch.utils.dlpack
-import pandas as pd
-
-def fit_ellipsoid(points):
-    alpha = 1
-    mesh = open3d.geometry.TriangleMesh.create_from_point_cloud_alpha_shape(points, alpha)
-    return mesh
-
+def fit_tetra_mesh():
+    pass
 def fit_ellipse_cv(poly):
     poly = np.array(poly, dtype=np.float32)
+
     try:
         ((cent_x, cent_y), (width, height), angle) = cv.fitEllipse(points=poly)
     except cv.error as e:
@@ -33,14 +29,13 @@ def fit_ellipse_cv(poly):
     d["r1"] = r1
     d["r2"] = r2
     return d
-
 def calculate_volume_using_fitted_ellipse_cv(poly):
     dp=fit_ellipse_cv(poly)
     r1, r2 = dp['r1'], dp['r2']
     return (4 / 3.0) * np.pi * r1 * r2 * min(r1, r2)
 
 def kmeans_clustering_ellipsoids(pcd):
-    kmeans = SKLearnKMeans(n_clusters=1500, max_iter=2, algorithm="full", init="random", n_init="auto")
+    kmeans = SKLearnKMeans(n_clusters=150000, max_iter=100000000, algorithm="full", init="random", n_init="auto")
     labels = kmeans.fit_predict(np.asarray(pcd.points))
     clusters = []
     for cluster_label in range(kmeans.n_clusters):
@@ -58,7 +53,7 @@ def kmeans_clustering_torch(pcd, device='cuda'):
     pcd_torch = torch.from_numpy(subsampled_pcd_np).float().to(device)
     pcd_torch=pcd_torch.unsqueeze(dim=0)
     print(pcd_torch.shape)
-    kmeans = TorchKMeans(n_clusters=15000, max_iter=2, device="cpu")
+    kmeans = TorchKMeans(n_clusters=15000, max_iter=10000000, device="cpu")
     labels = kmeans.fit(pcd_torch)
     clusters = []
     for cluster_label in range(kmeans.n_clusters):
@@ -97,49 +92,49 @@ def calculate_convex_hull_volume(pcd):
     return volume
 if __name__ == '__main__':
         print("read_file")
-        result=dict()
-        result["file_name"]=[]
-        result["total_volume"]=[]
         device = open3d.core.Device("CUDA:0")
-        main_dir="/home/cplus/projects/m.tarek_master/graval_detection_3D/regions_of_cloud_scaled"
-        regions=["region_1","region_2","region_3","region_4","region_5","region_6"]
-        for i in regions:
-            for j in os.listdir(os.path.join(main_dir,i)):
-                pcd = open3d.io.read_point_cloud(os.path.join(main_dir,i,j))
-                R = pcd.get_rotation_matrix_from_xyz((180, 0, 0))
-                pcd_rotated = pcd.rotate(R, (0, 0, 0))
-                alpha = 0.3
+        pcd = open3d.io.read_point_cloud("/home/cplus/projects/m.tarek_master/cloud_Scaled_ascii_label_0.ply")
+        R = pcd.get_rotation_matrix_from_xyz((180, 0, 0))
+        pcd_rotated = pcd.rotate(R, (0, 0, 0))
+
+        #pcd_org=pcd+pcd_rotated
+        alpha = 0.3
+        #mesh = open3d.geometry.TriangleMesh.create_from_point_cloud_alpha_shape(pcd_rotated, alpha)
+        #mesh.compute_vertex_normals()
+        # Draw the original point cloud and mesh together
+        #open3d.visualization.draw_geometries([pcd_org], mesh_show_back_face=True)
+        device=torch.device("cuda" if torch.cuda.is_available() else "cpu")  
+
+        ellipsoid_clusters = kmeans_clustering_ellipsoids(pcd_rotated)
+        total_ellipsoid_volumes = 0.0
+
+        for idx, ellipsoid_cluster in enumerate(ellipsoid_clusters):
+            points = np.asarray(ellipsoid_cluster.points)
+            pca = PCA(n_components=2)
+            points_2d = pca.fit_transform(points)
+            ellipsoid_volume = calculate_volume_using_fitted_ellipse_cv(points_2d)*pow(100,3)
+            center=ellipsoid_cluster.get_center()
+            dp=fit_ellipse_cv(points_2d)
+            r1,r2,r3=dp['r1'],dp['r2'],min(dp['r1'],dp['r2'])
+            print(r1," ",r2," ",r3)
+            mesh=fit_mesh(ellipsoid_cluster,min(dp['r1'],dp['r2']))
+            ellipsoid = fit_ball(points=ellipsoid_cluster.points,radii=np.asarray([r1,r2,r3]))
+            axis=ellipsoid_cluster.get_axis_aligned_bounding_box()
+            axis.color=(0,1,0)
+            bounding_box=ellipsoid_cluster.get_oriented_bounding_box()
+            bounding_box.color=(0,0,1)
+            print(bounding_box)
+            print(f"Ellipsoid {idx + 1} Volume (from Ellipsoid):", ellipsoid_volume)
+            convex_hull_volume = calculate_convex_hull_volume(ellipsoid_cluster)
+            total_ellipsoid_volumes += convex_hull_volume
+            print(f"Ellipsoid {idx + 1} Volume (from Convex Hull):", convex_hull_volume)
             
-                device=torch.device("cuda" if torch.cuda.is_available() else "cpu")  
-                ellipsoid_clusters = kmeans_clustering_ellipsoids(pcd_rotated)
-                total_ellipsoid_volumes = 0.0
+            print(f"Ellipsoid {idx + 1} results: {ellipsoid_volume:.6f} cm^3")
 
-                for idx, ellipsoid_cluster in enumerate(ellipsoid_clusters):
-                    points = np.asarray(ellipsoid_cluster.points)
-                    print("PCA in progress")
-                    pca = PCA(n_components=2)
-                    points_2d = pca.fit_transform(points)
-                    ellipsoid_volume = calculate_volume_using_fitted_ellipse_cv(points_2d)*pow(100,3)
-                    center=ellipsoid_cluster.get_center()
-                    print("radius calculation in progress")
-                    dp=fit_ellipse_cv(points_2d)
-                    r1,r2,r3=dp['r1'],dp['r2'],min(dp['r1'],dp['r2'])
-                    print(r1," ",r2," ",r3)
-                    ellipsoid = fit_ball(points=ellipsoid_cluster.points,radii=np.asarray([r1,r2,r3]))
-                    print(f"Ellipsoid {idx + 1} results: {ellipsoid_volume:.6f} cm^3")
-                    open3d.io.write_point_cloud(filename=f"/home/cplus/projects/m.tarek_master/graval_detection_3D/point_cloud_segmentation/clusters/stone{idx+1}.ply", 
-                                                write_ascii=True, 
-                                                pointcloud=ellipsoid_cluster)
-                    open3d.io.write_triangle_mesh(filename=f"/home/cplus/projects/m.tarek_master/graval_detection_3D/point_cloud_segmentation/meshes/stone{idx+1}.ply",
-                                                write_ascii=True, 
-                                                mesh=ellipsoid)
-                result["file_name"].append(os.path.join(main_dir,i))
-                result["total_volume"].append(ellipsoid_volume)
-            new = pd.DataFrame.from_dict(result)
-            new.to_csv(f"results_{j}.csv",encoding='utf-8', index=False)
-            print("Total Ellipsoid Volumes:", total_ellipsoid_volumes)  
+            # Draw the point cloud cluster, the fitted ellipsoid, and the ellipsoid mesh together
+            #open3d.visualization.draw_geometries([ellipsoid], window_name=f'Cluster {idx + 1}',mesh_show_back_face=True)
+            open3d.io.write_point_cloud(filename=f"/home/cplus/projects/m.tarek_master/graval_detection_3D/point_cloud_segmentation/clusters/stone{idx+1}.ply", 
+                                        write_ascii=True, 
+                                        pointcloud=ellipsoid_cluster)
 
-
-
-
-            
+        print("Total Ellipsoid Volumes:", total_ellipsoid_volumes)  

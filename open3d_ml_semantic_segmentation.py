@@ -5,10 +5,10 @@ import open3d as o3d
 import open3d.ml as _ml3d
 import open3d.ml.torch as ml3d
 print(o3d.core.cuda.is_available())
-kitti_dataset_dir='/home/cplus/projects/m.tarek_master/graval_detection_3D/kitti_dataset/dataset'
-cfg_model_path="/home/cplus/projects/m.tarek_master/graval_detection_3D/Open3D-ML/ml3d/configs/randlanet_s3dis.yml"
-model_weights="/home/cplus/projects/m.tarek_master/graval_detection_3D/kitti_dataset/randlanet_s3dis_202201071330utc.pth"
-pcd_dir="/home/cplus/projects/m.tarek_master/graval_detection_3D/point_cloud_segmentation/regions_of_cloud_scaled/region_1/1.ply"
+kitti_dataset_dir=r'/home/cplus/projects/m.tarek_master/graval_detection_3D/kitti_dataset/dataset'
+cfg_model_path=r"/home/cplus/projects/m.tarek_master/graval_detection_3D/Open3D-ML/ml3d/configs/randlanet_s3dis.yml"
+model_weights=r"/home/cplus/projects/m.tarek_master/graval_detection_3D/kitti_dataset/randlanet_s3dis_202201071330utc.pth"
+pcd_dir=r"/home/cplus/projects/m.tarek_master/graval_detection_3D/point_cloud_segmentation/cropped_circle_old_ascii.ply"
 cfg=_ml3d.utils.Config.load_from_file(filename=cfg_model_path)
 model=ml3d.models.RandLANet(**cfg.model)
 print(_ml3d.__version__)
