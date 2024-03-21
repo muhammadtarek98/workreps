@@ -14,18 +14,17 @@ points=torch.from_numpy(np.asarray(pcd_rotated.points))
 
 print(type(points))
 point_cloud=points.to(device)
-data = Data(pos=torch.tensor(points, dtype=torch.float).to(device))
-
+data = Data(pos=torch.tensor(points.clone().detach(), dtype=torch.float).to(device))
 knn_graph=torch_geometric.transforms.KNNGraph(k=2,force_undirected=False,loop=True,cosine=True)
+remove_duplication=torch_geometric.transforms.RemoveDuplicatedEdges()
 ccp=torch_geometric.transforms.LargestConnectedComponents(num_components=4)
-
 graph=knn_graph(data)
+graph=remove_duplication(graph)
 #graph=ccp(graph)
 print(graph)
 g = torch_geometric.utils.to_cugraph(graph.edge_index,directed=False,relabel_nodes= True)
-node_positions = {i:
-                   pcd_rotated.points[i] 
-                   for i in range(len(pcd_rotated.points))}
+node_positions = {i: pcd_rotated.points[i]for i in range(len(pcd_rotated.points))}
+
 
 pcd = o3d.geometry.PointCloud()
 pcd.points = o3d.utility.Vector3dVector(np.asarray(pcd_rotated.points))
@@ -35,7 +34,7 @@ G = nx.Graph()
 G.add_edges_from(edges)
 
 # Draw point cloud
-o3d.visualization.draw_geometries([pcd], window_name='Point Cloud')
+#o3d.visualization.draw_geometries([pcd], window_name='Point Cloud')
 
 # Draw graph edges
 lines = []
@@ -48,3 +47,34 @@ line_set = o3d.geometry.LineSet()
 line_set.points = o3d.utility.Vector3dVector(np.vstack(lines))
 line_set.lines = o3d.utility.Vector2iVector(np.array([[i, i+1] for i in range(0, len(lines), 2)]))
 o3d.visualization.draw_geometries([line_set], window_name='Graph Edges')
+
+"""
+points_tensor = torch.from_numpy(points).to(device)
+data = torch_geometric.data.Data(pos=points_tensor)
+
+knn_graph = T.KNNGraph(k=2, force_undirected=False, loop=True, cosine=True)
+graph = knn_graph(data)
+edge_list = graph.edge_index.t().cpu().numpy()
+g = cugraph.Graph()
+g.from_cudf_edgelist(cudf.DataFrame(edge_list), source='src', destination='dst')
+labels = cugraph.connected_components(g)[0]
+stacked_points = {}
+for i, (x, y, _) in enumerate(points):
+    stacked_points.setdefault((round(x, 2), round(y, 2)), []).append(i)
+
+lines = []
+for stacked_group in stacked_points.values():
+    for i in range(len(stacked_group) - 1):
+        start_node = stacked_group[i]
+        end_node = stacked_group[i + 1]
+        lines.append([start_node, end_node])
+
+pcd = o3d.geometry.PointCloud()
+pcd.points = o3d.utility.Vector3dVector(points)
+o3d.visualization.draw_geometries([pcd], window_name='Point Cloud')
+
+line_set = o3d.geometry.LineSet()
+line_set.points = o3d.utility.Vector3dVector(points)
+line_set.lines = o3d.utility.Vector2iVector(lines)
+o3d.visualization.draw_geometries([line_set], window_name='Graph Edges')
+"""

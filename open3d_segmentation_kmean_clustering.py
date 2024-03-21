@@ -3,7 +3,6 @@ import os
 import numpy as np
 from sklearn.cluster import KMeans
 from scipy.spatial import ConvexHull
-import open3d
 import os
 import numpy as np
 from sklearn.cluster import KMeans
