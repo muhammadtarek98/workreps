@@ -1,49 +1,31 @@
-from torch.utils.data import Dataset, DataLoader
-from PIL import Image
-from matplotlib import pyplot as plt
-from transformers import AdamW
-import torch
-from torch import nn
-from sklearn.metrics import accuracy_score
-import torchvision
-import os
-from transformers import SegformerForSemanticSegmentation, SegformerImageProcessor, SegformerFeatureExtractor, \
-    SegformerConfig
-import pandas as pd
-import cv2
-import albumentations as aug
-import pytorch_lightning as pl
-from torchinfo import summary
-import numpy as np
-from datasets import load_metric
 import evaluate
-from pytorch_lightning.callbacks.early_stopping import EarlyStopping
-from pytorch_lightning.callbacks.model_checkpoint import ModelCheckpoint
-from lightning.pytorch.loggers import TensorBoardLogger
-from lightning.pytorch.callbacks import BasePredictionWriter
+import pytorch_lightning as pl
+import torch
+import torchvision
+from torch import nn
+from transformers import AdamW
+from transformers import SegformerForSemanticSegmentation
 from Model_Pytorch import Model
+from Configs import *
 
 
 class SegformerFinetuner(pl.LightningModule):
-    def __init__(self, id2label, model_name, train_dataloader=None, val_dataloader=None, test_dataloader=None,
-                 metrics_interval=100):
+    def __init__(self, ):
         super(SegformerFinetuner, self).__init__()
         self.id2label = id2label
         self.metrics_interval = metrics_interval
         self.train_dl = train_dataloader
-        self.val_dl = val_dataloader
+        self.val_dl = valid_dataloader
         self.test_dl = test_dataloader
         self.num_classes = len(id2label.keys())
         self.label2id = {v: k for k, v in self.id2label.items()}
-        self.model_name = model_name
+        self.model_name=model_name
+
         self.model = SegformerForSemanticSegmentation.from_pretrained(self.model_name,
                                                                       ignore_mismatched_sizes=True,
                                                                       reshape_last_stage=True)
 
-        self.model_torch_class = Model(id2label=self.id2label,
-                                       model_name=self.model_name,
-                                       label2id=self.label2id,
-                                       num_classes=self.num_classes)
+        self.model_torch_class = Model()
         self.train_mean_iou = evaluate.load("mean_iou")
         self.val_mean_iou = evaluate.load("mean_iou")
         self.test_mean_iou = evaluate.load("mean_iou")
@@ -95,13 +77,13 @@ class SegformerFinetuner(pl.LightningModule):
         predicted = upsampled_logits.argmax(dim=1)
         self.test_mean_iou.add_batch(predictions=predicted.detach().cpu().numpy(),
                                      references=masks.detach().cpu().numpy())
-        test_metircs = self.test_mean_iou.compute(num_labels=self.num_classes, ignore_index=255, reduce_labels=False)
-        test_metircs = {'test_loss': loss, "test_mean_iou": test_metircs["mean_iou"],
-                        "test_mean_accuracy": test_metircs["mean_accuracy"]}
-        for k, v in test_metircs.items():
+        test_metrics = self.test_mean_iou.compute(num_labels=self.num_classes, ignore_index=255, reduce_labels=False)
+        test_metrics = {'test_loss': loss, "test_mean_iou": test_metrics["mean_iou"],
+                        "test_mean_accuracy": test_metrics["mean_accuracy"]}
+        for k, v in test_metrics.items():
             self.log(k, v, enable_graph=True, prog_bar=True)
         self.log_predictions_to_tensorboard(images, masks, predicted, 'test')
-        return test_metircs
+        return test_metrics
 
     def configure_optimizers(self):
         return AdamW([p for p in self.parameters() if p.requires_grad], lr=2e-06, eps=1e-08)
@@ -122,3 +104,9 @@ class SegformerFinetuner(pl.LightningModule):
         self.logger.experiment.add_image(f'{mode}_images', img_grid, self.current_epoch)
         self.logger.experiment.add_image(f'{mode}_masks', mask_grid, self.current_epoch)
         self.logger.experiment.add_image(f'{mode}_predictions', pred_grid, self.current_epoch)
+"""
+test = SegformerFinetuner(use_pytorch_implementation=use_pytorch_imp)
+x = torch.rand((1, 3, 1080, 1080))
+output = test(x)
+print(output)
+"""
