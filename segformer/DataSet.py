@@ -63,26 +63,22 @@ class ImageSegmentationDataset(Dataset):
             encoded_inputs[k].squeeze_()  # remove batch dimension
         return encoded_inputs
 
-
-class ImageSegmentationDatasetInference(Dataset):
+class ImageSegmentationDatasetInfernce(Dataset):
     """Image segmentation dataset."""
-
-    def __init__(self, image_dir, feature_extractor):
-        super(ImageSegmentationDatasetInference, self).__init__()
+    def __init__(self, image_dir,feature_extractor):
+        super(ImageSegmentationDatasetInfernce,self).__init__()
         self.img_dir = image_dir
-        self.feature_extractor = feature_extractor
+        self.feature_extractor=feature_extractor
         image_file_names = []
         for root, dirs, files in os.walk(self.img_dir):
             image_file_names.extend(files)
         self.images = sorted(image_file_names)
-
     def __len__(self):
         return len(self.images)
-
     def __getitem__(self, idx):
         image = cv2.imread(os.path.join(self.img_dir, self.images[idx]))
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         encoded_inputs = self.feature_extractor(image, return_tensors="pt")
-        for k, v in encoded_inputs.items():
-            encoded_inputs[k].squeeze_()  # remove batch dimension
+        for k,v in encoded_inputs.items():
+          encoded_inputs[k].squeeze_() # remove batch dimension
         return encoded_inputs
