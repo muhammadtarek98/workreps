@@ -53,32 +53,40 @@ class ImageSegmentationDataset(Dataset):
         return len(self.images)
 
     def __getitem__(self, idx):
-        image = cv2.imread(os.path.join(self.img_dir, self.images[idx]))
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-        segmentation_map = cv2.imread(os.path.join(self.ann_dir, self.annotations[idx]))
-        segmentation_map = cv2.cvtColor(segmentation_map, cv2.COLOR_BGR2GRAY)
+        image = Image.open(os.path.join(self.img_dir, self.images[idx])).convert("RGB")
+        #image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        segmentation_map = Image.open(os.path.join(self.ann_dir, self.annotations[idx])).convert("L")
+        segmentation_map = np.array(segmentation_map)
+        segmentation_map = (segmentation_map > 0).astype(np.uint8)
+        segmentation_map = Image.fromarray(segmentation_map)
+        #segmentation_map = cv2.cvtColor(segmentation_map, cv2.COLOR_BGR2RGB)
         # randomly crop + pad both image and segmentation map to same size
         encoded_inputs = self.feature_extractor(image, segmentation_map, return_tensors="pt")
+
         for k, v in encoded_inputs.items():
             encoded_inputs[k].squeeze_()  # remove batch dimension
         return encoded_inputs
 
-class ImageSegmentationDatasetInfernce(Dataset):
+
+class ImageSegmentationDatasetInference(Dataset):
     """Image segmentation dataset."""
-    def __init__(self, image_dir,feature_extractor):
-        super(ImageSegmentationDatasetInfernce,self).__init__()
+
+    def __init__(self, image_dir, feature_extractor):
+        super(ImageSegmentationDatasetInference, self).__init__()
         self.img_dir = image_dir
-        self.feature_extractor=feature_extractor
+        self.feature_extractor = feature_extractor
         image_file_names = []
         for root, dirs, files in os.walk(self.img_dir):
             image_file_names.extend(files)
         self.images = sorted(image_file_names)
+
     def __len__(self):
         return len(self.images)
+
     def __getitem__(self, idx):
         image = cv2.imread(os.path.join(self.img_dir, self.images[idx]))
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         encoded_inputs = self.feature_extractor(image, return_tensors="pt")
-        for k,v in encoded_inputs.items():
-          encoded_inputs[k].squeeze_() # remove batch dimension
+        for k, v in encoded_inputs.items():
+            encoded_inputs[k].squeeze_()  # remove batch dimension
         return encoded_inputs
