@@ -1,0 +1,4 @@
+-DOpen3D_ROOT=${HOME}/open3d_install
+-DCMAKE_CUDA_ARCHITECTURES=all
+-DCMAKE_CUDA_COMPILER=/usr/local/cuda-11.8/bin/nvcc
+-DCMAKE_PREFIX_PATH=/home/muahmmad/projects/packages/open3d-cmake-find-package/libtorch/share/cmake/Torch/
