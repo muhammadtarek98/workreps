@@ -2,7 +2,7 @@ import torch, torchinfo
 import Configs
 from GeneratorEncoderBlock import ConvBlock
 from ResidualBlock import ResidualBlock
-from UW_CycleGAN.Configs import out_feature
+from Configs import out_feature
 
 class GeneratorEncoder(torch.nn.Module):
     def __init__(self,
@@ -35,7 +35,6 @@ class GeneratorEncoder(torch.nn.Module):
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         x = self.initial_block(x)
-        print(x.shape)
         for layer in self.down_sampling:
             x = layer(x)
 

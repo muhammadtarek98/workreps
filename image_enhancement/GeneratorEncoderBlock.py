@@ -32,7 +32,7 @@ class ConvBlock(torch.nn.Module):
         x = self.conv(x)
         if self.bn:
             x = self.bn(x)
-        else:
+        if self.use_activation:
             x = self.activation(x)
         return x
 

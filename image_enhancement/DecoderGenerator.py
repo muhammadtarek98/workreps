@@ -1,38 +1,27 @@
 from GeneratorDecoderBlock import ConvTransposeBlock
 import torch, torchinfo, Configs
 
+from GeneratorEncoderBlock import ConvBlock
+
 
 class GeneratorDecoder(torch.nn.Module):
-    def __init__(self,
-                 in_channels:int,
-                 out_channels:int,
-                 stride: int = 2,
-                 padding: int = 1,
-                 kernel_size: int = 4,
-                 image_channels: int = 3):
+    def __init__(self, in_channels: int, out_channels: int):
         super().__init__()
-        self.deconv_blocks = torch.nn.ModuleList([
-            ConvTransposeBlock(in_channels=in_channels,
-                               out_channels=out_channels,
-                               kernel_size=kernel_size,
-                               stride=stride,padding=padding),
-            ConvTransposeBlock(in_channels=out_channels,
-                               out_channels=out_channels//2,
-                               kernel_size=kernel_size,
-                               stride=stride,
-                               padding=padding)]
+        self.up_sampling = torch.nn.ModuleList(
+            [
+                ConvTransposeBlock(in_channels=in_channels, out_channels=128, stride=2),
+                ConvTransposeBlock(in_channels=128, out_channels=64, stride=2),
+            ]
         )
-        self.output_layer=ConvTransposeBlock(last_layer=True,
-                                             in_channels=out_channels//2,
-                                             out_channels=image_channels,
-                                             stride=stride,
-                                             kernel_size=7,
-                                             padding=3)
-    def forward(self,x:torch.Tensor)->torch.Tensor:
-        for layer in self.deconv_blocks:
-            x=layer(x)
-        return self.output_layer(x)
+        self.final_block = ConvBlock(in_channels=64,
+                                     out_channels=out_channels,
+                                     kernel_size=4, stride=1, padding=3, use_bn=False, use_activation=False)
 
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        for layer in self.up_sampling:
+            x = layer(x)
+        x = self.final_block(x)
+        return x
 """
 model = GeneratorDecoder()
 x = torch.randn((1, 512, 45, 45))

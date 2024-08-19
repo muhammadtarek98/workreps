@@ -14,8 +14,8 @@ class CustomDataset(Dataset):
         super().__init__()
         self.root_image_dir = images_dir
 
-        self.lr_images = os.path.join(self.root_image_dir, "trainA")
-        self.hr_images = os.path.join(self.root_image_dir, "trainB")
+        self.lr_images = os.path.join(self.root_image_dir, "blurred_images")
+        self.hr_images = os.path.join(self.root_image_dir, "sharped_images")
         self.lr_images_list = []
         self.hr_images_list = []
         for file in os.listdir(self.lr_images):
@@ -37,16 +37,16 @@ class CustomDataset(Dataset):
     def __len__(self) -> int:
         return self.data_set_length
 
-    def __getitem__(self, idx):
+    def __getitem__(self, idx:int):
         lr_image_file = self.lr_images_list[idx]
         hr_image_file = self.hr_images_list[idx]
         lr_image = cv2.cvtColor(src=cv2.imread(lr_image_file), code=cv2.COLOR_BGR2RGB)
         hr_image = cv2.cvtColor(src=cv2.imread(hr_image_file), code=cv2.COLOR_BGR2RGB)
-        if self.transform:
-            augmentation = self.transform(image=lr_image, image0=hr_image)
-            lr_image = augmentation["image"]
-            hr_image = augmentation["image0"]
-        return lr_image, hr_image
+        if self.transform is not None:
+            lr_image= self.transform(lr_image)
+            hr_image = self.transform(hr_image)
+
+        return [lr_image, hr_image]
 
 """
 root_dir = "/home/cplus/projects/m.tarek_master/Image_enhancement/dataset/underwater_imagenet"
