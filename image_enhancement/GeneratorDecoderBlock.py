@@ -15,18 +15,22 @@ class ConvTransposeBlock(torch.nn.Module):
                                                       kernel_size=kernel_size,
                                                       padding=padding,
                                                       stride=stride)
+        self.bn=torch.nn.InstanceNorm2d(out_channels)
         self.activation = None
         if last_layer:
             self.activation = torch.nn.Tanh()
         else:
-            self.activation = torch.nn.ReLU()
+            self.activation = torch.nn.ReLU(inplace=True)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         x = self.convtranspose(x)
+        x=self.bn(x)
         return self.activation(x)
 
 """
 model = ConvTransposeBlock(in_channels=64, out_channels=3, stride=2, last_layer=True)
-x = torch.randn((1, 64, 26, 26))
+x = torch.randn((1,64, 720, 720))
+pred=model(x)
+print(pred.shape)
 torchinfo.summary(model=model, input_data=x)
 """
