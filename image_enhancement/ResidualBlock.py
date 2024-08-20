@@ -7,19 +7,19 @@ class ResidualBlock(torch.nn.Module):
                  kernel_size: int = 3,
                  stride: int = 1,
                  padding: int = 1,
-                 use_bn: bool = False,
+                 use_bn: bool = True,
                  use_activation: bool = False):
         super(ResidualBlock, self).__init__()
         self.conv_block = torch.nn.Sequential(
             ConvBlock(in_channels=channels,
                       out_channels=channels,
-                      use_activation=use_activation,
+                      use_activation=True,
                       use_bn=use_bn,
                       kernel_size=kernel_size,
                       padding=padding, stride=stride),
             ConvBlock(in_channels=channels,
                       out_channels=channels,
-                      use_activation=not use_activation,
+                      use_activation=False,
                       use_bn=use_bn,
                       kernel_size=kernel_size, padding=padding,
                       stride=stride

@@ -11,7 +11,8 @@ class GeneratorEncoder(torch.nn.Module):
                  out_channels: int = 64
                  ):
         super().__init__()
-        self.initial_block = ConvBlock(use_activation=True, use_bn=False,
+        self.initial_block = ConvBlock(use_activation=True,
+                                       use_bn=False,
                                        in_channels=in_channels,
                                        out_channels=out_feature[0],
                                        kernel_size=7, stride=1, padding=3)
