@@ -1,8 +1,8 @@
 import torch, torchinfo
-import Configs
-from GeneratorEncoderBlock import ConvBlock
-from ResidualBlock import ResidualBlock
-from Configs import out_feature
+from UW_CycleGAN import Configs
+from UW_CycleGAN.GeneratorEncoderBlock import ConvBlock
+from UW_CycleGAN.ResidualBlock import ResidualBlock
+from UW_CycleGAN.Configs import out_feature
 
 class GeneratorEncoder(torch.nn.Module):
     def __init__(self,

@@ -1,16 +1,16 @@
 import pytorch_lightning as pl
-import torchmetrics.image
-import torch, torchvision
-from pytorch_lightning.utilities.types import EVAL_DATALOADERS, TRAIN_DATALOADERS, OptimizerLRScheduler, STEP_OUTPUT
+import torch
+import torchvision
+from pytorch_lightning.utilities.types import EVAL_DATALOADERS, TRAIN_DATALOADERS
 
-from Discriminator import Discriminator
-from Generator import Generator
+from UW_CycleGAN.Discriminator import Discriminator
+from UW_CycleGAN.Generator import Generator
 
 
 def init_weights(net, init_type='normal', init_gain=0.02):
     def init_func(m):  # define the initialization function
-        classname = m.__class__.__name__
-        if hasattr(m, 'weight') and (classname.find('Conv') != -1 or classname.find('Linear') != -1):
+        class_name = m.__class__.__name__
+        if hasattr(m, 'weight') and (class_name.find('Conv') != -1 or class_name.find('Linear') != -1):
             if init_type == 'normal':
                 torch.nn.init.normal_(m.weight, 0.0, init_gain)
             elif init_type == 'xavier':
@@ -23,11 +23,16 @@ def init_weights(net, init_type='normal', init_gain=0.02):
                 raise NotImplementedError('initialization method [%s] is not implemented' % init_type)
             if hasattr(m, 'bias') and m.bias is not None:
                 torch.nn.init.constant_(m.bias.data, 0.0)
-        elif classname.find('BatchNorm2d') != -1:  # BatchNorm Layer's weight is not a matrix; only normal distribution applies.
+        elif class_name.find(
+                'BatchNorm2d') != -1:  # BatchNorm Layer's weight is not a matrix; only normal distribution applies.
             torch.nn.init.normal_(m.weight, 1.0, init_gain)
-            torch.nn.init.constant_(m.bias, 0.0)
+            torch.nn.init.constant_(m.bias, val=0.0)
 
     net.apply(init_func)  # apply the initialization function <init_func>
+
+
+def denormalize(tensor):
+    return (tensor + 1.0) * 255.0
 
 
 class GAN(pl.LightningModule):
@@ -59,7 +64,7 @@ class GAN(pl.LightningModule):
         self.mse_loss = torch.nn.MSELoss()
         self.automatic_optimization = False
 
-    def forward(self, lr, hr):
+    def forward(self, lr, hr=None):
         fake_lr = self.generator_lr(hr)
         fake_hr = self.generator_hr(lr)
         return fake_hr, fake_lr
@@ -130,16 +135,21 @@ class GAN(pl.LightningModule):
         self.manual_backward(total_gen_loss, retain_graph=True)
         lr_generator_optimizer.step()
         hr_generator_optimizer.step()
-        self.log(name="total_discriminator_loss", value=total_disc_loss, on_step=True, on_epoch=True, prog_bar=True)
+        self.log(name="total_discriminator_loss", value=total_disc_loss,
+                 on_step=True,
+                 on_epoch=True,
+                 prog_bar=True)
         self.log(name="lr_discriminator_loss",
                  value=lr_disc_loss,
-                 prog_bar=True, logger=True,
+                 prog_bar=True,
+                 logger=True,
                  on_step=True,
                  on_epoch=True)
         self.log(name="hr_discriminator_loss",
                  value=hr_disc_loss,
                  prog_bar=True,
-                 logger=True, on_step=True,
+                 logger=True,
+                 on_step=True,
                  on_epoch=True)
         self.log_predictions_to_tensorboard(lr_image=lr_image,
                                             gen_lr=fake_hr,
@@ -147,31 +157,43 @@ class GAN(pl.LightningModule):
                                             cycled_hr=cycled_hr,
                                             cycled_lr=cycled_lr)
 
-        self.log(name="total_gen_loss",
+        self.log(name="total_generator_loss",
                  value=total_gen_loss,
-                 prog_bar=True, logger=True,
+                 prog_bar=True,
+                 logger=True,
                  on_step=True,
                  on_epoch=True)
         self.log(name="lr_identity_loss",
                  value=lr_identity_loss,
-                 on_step=True, on_epoch=True,
+                 on_step=True,
+                 on_epoch=True,
                  prog_bar=True)
         self.log(name="hr_identity_loss",
                  value=hr_identity_loss,
-                 prog_bar=True, logger=True, on_step=True,
+                 prog_bar=True,
+                 logger=True,
+                 on_step=True,
                  on_epoch=True)
         self.log(name="lr_cycle_loss",
                  value=cycled_lr_loss,
-                 on_step=True, on_epoch=True,
+                 on_step=True,
+                 on_epoch=True,
                  prog_bar=True)
         self.log(name="hr_cycle_loss",
-                 value=cycled_hr_loss, prog_bar=True, logger=True, on_step=True,
+                 value=cycled_hr_loss,
+                 prog_bar=True,
+                 logger=True,
+                 on_step=True,
                  on_epoch=True)
         self.log(name="lr_generator_loss",
-                 value=lr_gen_loss, on_step=True, on_epoch=True, prog_bar=True)
+                 value=lr_gen_loss,
+                 on_step=True,
+                 on_epoch=True,
+                 prog_bar=True)
         self.log(name="hr_generator_loss",
                  value=hr_gen_loss,
-                 prog_bar=True, logger=True,
+                 prog_bar=True,
+                 logger=True,
                  on_step=True,
                  on_epoch=True)
 
@@ -189,8 +211,6 @@ class GAN(pl.LightningModule):
                                                   params=self.generator_hr.parameters())
         return [hr_discriminator_optimizer, lr_discriminator_optimizer, lr_generator_optimizer, hr_generator_optimizer]
 
-    def denormalize(self,tensor):
-        return (tensor +1.0)*255.0
     def log_predictions_to_tensorboard(self, cycled_hr,
                                        cycled_lr, lr_image, gen_lr, real_hr_image, mode='train'):
         lr_image = torchvision.utils.make_grid(tensor=lr_image, normalize=False)

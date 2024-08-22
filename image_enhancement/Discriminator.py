@@ -1,6 +1,6 @@
 import torch, torchinfo
-from ResidualBlock import ResidualBlock
-from GeneratorEncoderBlock import ConvBlock
+from UW_CycleGAN.ResidualBlock import ResidualBlock
+from UW_CycleGAN.GeneratorEncoderBlock import ConvBlock
 
 
 class Discriminator(torch.nn.Module):

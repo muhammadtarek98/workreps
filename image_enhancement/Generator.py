@@ -1,8 +1,8 @@
 
 import torch, torchinfo
 
-from GeneratorEncoder import GeneratorEncoder
-from DecoderGenerator import GeneratorDecoder
+from UW_CycleGAN.GeneratorEncoder import GeneratorEncoder
+from UW_CycleGAN.DecoderGenerator import GeneratorDecoder
 
 
 class Generator(torch.nn.Module):

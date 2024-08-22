@@ -1,7 +1,8 @@
-from GeneratorDecoderBlock import ConvTransposeBlock
-import torch, torchinfo, Configs
+from UW_CycleGAN.GeneratorDecoderBlock import ConvTransposeBlock
+import torch, torchinfo
+from UW_CycleGAN import Configs
 
-from GeneratorEncoderBlock import ConvBlock
+from UW_CycleGAN.GeneratorEncoderBlock import ConvBlock
 
 
 class GeneratorDecoder(torch.nn.Module):
